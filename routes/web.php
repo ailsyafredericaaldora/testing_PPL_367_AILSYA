@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
-
+use App\Http\Controllers\registrasiController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,5 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::put('/note-update/{id}', [NoteController::class, 'update'])->name('note-update');
     Route::delete('/delete-note/{id}', [NoteController::class, 'destroy']);
 });
+
+
+
+Route::get('/register', [registrasiController::class, 'form'])->name('registrasi.form');
+Route::post('/register', [registrasiController::class, 'store'])->name('registrasi.store');
+
 
 require __DIR__.'/auth.php';
