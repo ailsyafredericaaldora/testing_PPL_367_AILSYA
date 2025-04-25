@@ -32,8 +32,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/register', [registrasiController::class, 'form'])->name('registrasi.form');
-Route::post('/register', [registrasiController::class, 'store'])->name('registrasi.store');
+
 
 
 require __DIR__.'/auth.php';
